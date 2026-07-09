@@ -183,14 +183,23 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .dropdown-toggle svg { width: 14px; height: 14px; transition: transform 0.2s; }
 .nav-dropdown:hover .dropdown-toggle svg { transform: rotate(180deg); }
 .dropdown-menu {
-  display: none; position: absolute; top: calc(100% + 8px); left: 0;
+  display: none; position: absolute; top: 100%; left: 0;
+  padding-top: 8px; /* transparent hover bridge — keeps :hover alive across the gap */
+  min-width: 210px; z-index: 100;
+}
+/* Visual panel drawn via ::before so the padding stays transparent */
+.dropdown-menu::before {
+  content: ''; position: absolute;
+  top: 8px; left: 0; right: 0; bottom: 0;
   background: var(--surface-solid);
-  border: var(--glass-border);
-  border-radius: var(--r); padding: 8px; min-width: 210px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6); z-index: 100;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--r);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 .nav-dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu a {
+  position: relative; z-index: 1; /* above ::before panel */
   display: flex; align-items: center; gap: 10px;
   padding: 10px 12px; border-radius: var(--r-sm);
   font-size: 13px; color: var(--text-sec);
@@ -241,16 +250,26 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
   background: var(--surface-solid);
   border-bottom: 1px solid var(--border2);
-  padding: 20px 28px 28px; z-index: 999;
+  padding: 16px 20px 28px;
+  z-index: 999;
+  max-height: calc(100vh - var(--nav-h));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  box-sizing: border-box;
 }
 .mobile-menu.open { display: block; }
 .mobile-menu a {
-  display: block; padding: 12px 0; font-size: 16px; font-weight: 500;
+  display: block; padding: 13px 0; font-size: 15px; font-weight: 500;
   color: var(--text-sec); border-bottom: 1px solid var(--border);
-  transition: color var(--t);
+  transition: color var(--t); white-space: normal; word-break: break-word;
 }
+.mobile-menu a:last-of-type { border-bottom: none; }
 .mobile-menu a:hover { color: var(--primary-light); }
-.mobile-menu .btn-primary { margin-top: 20px; display: block; text-align: center; }
+.mobile-menu .btn-primary {
+  margin-top: 16px; display: block; text-align: center;
+  width: 100%; box-sizing: border-box;
+}
 
 /* ─── HERO ───────────────────────────────────────────────── */
 .hero {
@@ -806,23 +825,46 @@ h2.sec-title .accent-pink { color: var(--cta-light); }
 @media (max-width: 768px) {
   :root { --sec-py: 64px; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .grid-4 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
   .hero h1 { letter-spacing: -1.5px; }
-  .hero-stats { gap: 28px; }
+  .hero-stats { gap: 28px; flex-wrap: wrap; }
   .stat-num { font-size: 30px; }
   .nav-links, .nav-cta { display: none; }
   .nav-dropdown { display: none; }
   .nav-toggle { display: flex; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .cta-banner { padding: 44px 24px; }
-  .trust-inner { gap: 20px; }
+  .cta-banner { padding: 44px 20px; }
+  .cta-banner h2 { font-size: 26px; }
+  .cta-banner p { font-size: 16px; }
+  .trust-inner { gap: 16px; }
+  .trust-item { font-size: 11px; }
   .metrics-row { grid-template-columns: repeat(2, 1fr); }
   .page-hero { padding-top: calc(var(--nav-h) + 48px); padding-bottom: 56px; }
+  .feature-split { grid-template-columns: 1fr; gap: 40px; }
+  /* Prevent wide elements from causing horizontal scroll */
+  .visual-box { aspect-ratio: auto; min-height: 260px; }
+  table, pre { overflow-x: auto; display: block; max-width: 100%; }
+  /* Onboarding two-col grid */
+  div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 480px) {
-  .container { padding: 0 18px; }
+  :root { --sec-py: 48px; }
+  .container { padding: 0 16px; }
+  .hero h1 { font-size: 34px; letter-spacing: -1px; }
+  .hero-badge { font-size: 10px; padding: 5px 14px; }
   .hero-actions { flex-direction: column; }
   .hero-actions a { width: 100%; justify-content: center; }
+  .hero-stats { gap: 20px; }
   .metrics-row { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+  .partner-chip { font-size: 12px; padding: 7px 14px; }
+  .cert-badge { font-size: 11px; padding: 8px 12px; }
+  .product-card { padding: 24px 20px; }
+  .cta-banner { padding: 32px 16px; border-radius: 16px; }
+  .footer { padding: 48px 0 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+  .sec-sub { font-size: 16px; }
+  .page-hero h1 { font-size: 30px; }
+  .page-hero p.lead { font-size: 15px; }
 }
