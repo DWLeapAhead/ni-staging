@@ -274,7 +274,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 /* ─── HERO ───────────────────────────────────────────────── */
 .hero {
   min-height: 100vh;
-  padding-top: calc(var(--nav-h) + 70px); padding-bottom: 90px;
+  padding-top: calc(var(--nav-h) + 40px); padding-bottom: 60px;
   display: flex; align-items: center;
   position: relative; overflow: hidden;
 }
@@ -303,7 +303,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   border: 1px solid rgba(99, 102, 241, 0.30);
   border-radius: 100px; padding: 6px 18px;
   font-size: 12px; font-weight: 700; color: var(--primary-light);
-  margin-bottom: 30px; text-transform: uppercase; letter-spacing: 0.8px;
+  margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.8px;
 }
 .hero-badge .dot {
   width: 7px; height: 7px; background: var(--primary); border-radius: 50%;
@@ -316,9 +316,9 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 /* Hero type */
 .hero h1 {
-  font-size: clamp(40px, 6.5vw, 76px);
+  font-size: clamp(36px, 5.5vw, 68px);
   font-weight: 900; line-height: 1.05;
-  letter-spacing: -2px; color: var(--text); margin-bottom: 24px;
+  letter-spacing: -2px; color: var(--text); margin-bottom: 18px;
 }
 .hero h1 .accent      { color: var(--primary-light); }
 .hero h1 .accent-pink { color: var(--cta-light); }
@@ -327,14 +327,14 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 
 .hero-sub {
   font-size: clamp(16px, 2vw, 20px); color: var(--text-sec);
-  line-height: 1.65; max-width: 580px; margin-bottom: 44px;
+  line-height: 1.65; max-width: 580px; margin-bottom: 28px;
 }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
 /* Hero stats */
 .hero-stats {
-  display: flex; gap: 44px; margin-top: 60px;
-  padding-top: 36px; border-top: 1px solid var(--border);
+  display: flex; gap: 36px; margin-top: 36px;
+  padding-top: 28px; border-top: 1px solid var(--border);
   flex-wrap: wrap;
 }
 .stat-num {
