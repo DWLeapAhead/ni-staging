@@ -1143,12 +1143,16 @@ html.tesla-page { scroll-snap-type: y proximity; }
 
 /* ─── TESLA SECTIONS ─────────────────────────────────────── */
 .ts-section {
-  height: 100svh; min-height: 600px;
+  height: 100vh; /* fallback for older browsers */
+  height: 100svh;
+  min-height: 600px;
   scroll-snap-align: start;
   position: relative;
   display: flex; flex-direction: column;
   align-items: center; justify-content: space-between;
-  background-size: cover; background-position: center; background-repeat: no-repeat;
+  background-color: #0a0a14; /* fallback when image doesn't load */
+  background-size: cover; background-position: center center; background-repeat: no-repeat;
+  -webkit-background-size: cover;
   text-align: center;
   padding: calc(var(--nav-h) + 48px) 24px 56px;
 }
@@ -1180,6 +1184,28 @@ html.tesla-page { scroll-snap-type: y proximity; }
   font-size: 13px; font-weight: 500;
   color: rgba(255,255,255,0.75);
   letter-spacing: 0.5px; margin-bottom: 12px;
+}
+/* Prominent brand lockup — "Network Intelligence" above product h1 */
+.ts-brand-lockup {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 20px;
+}
+.ts-brand-mark {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800; color: #fff;
+  letter-spacing: -0.5px; flex-shrink: 0;
+}
+.ts-brand-text {
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 700; color: #fff;
+  letter-spacing: -0.5px; line-height: 1.1;
+}
+.ts-brand-text small {
+  display: block; font-size: 11px; font-weight: 400;
+  color: rgba(255,255,255,0.60); letter-spacing: 0.5px;
+  text-transform: uppercase; margin-top: 2px;
 }
 .ts-h1 {
   font-size: clamp(52px, 9vw, 116px);

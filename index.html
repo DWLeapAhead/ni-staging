@@ -15,13 +15,13 @@
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
     <a href="/ni-staging/" class="nav-logo">
-      <img src="https://www.networkintelligence.ai/wp-content/uploads/2024/04/final-logo.png"
-        alt="Network Intelligence" style="height:38px;width:auto;display:block;"
-        onerror="this.style.display='none';document.getElementById('navLogoFallback').style.display='flex';">
-      <div id="navLogoFallback" style="display:none;align-items:center;gap:10px;">
+      <div id="navLogoFallback" style="display:flex;align-items:center;gap:10px;">
         <div class="ni-mark">NI</div>
         <div class="logo-name">Network Intelligence<span class="sub">Cybersecurity &amp; AI</span></div>
       </div>
+      <img src="https://www.networkintelligence.ai/wp-content/uploads/2024/04/final-logo.png"
+        alt="Network Intelligence" style="height:38px;width:auto;display:none;"
+        onload="this.style.display='block';document.getElementById('navLogoFallback').style.display='none';">
     </a>
     <div class="nav-links">
       <div class="nav-dropdown">
@@ -92,7 +92,10 @@
 <section class="ts-section" style="background-image:url('assets/img/bg-hero.avif');">
   <div class="ts-overlay ts-overlay-dark"></div>
   <div class="ts-top">
-    <div class="ts-eyebrow">Network Intelligence</div>
+    <div class="ts-brand-lockup">
+      <div class="ts-brand-mark">NI</div>
+      <div class="ts-brand-text">Network Intelligence<small>Cybersecurity &amp; AI</small></div>
+    </div>
     <h1 class="ts-h1">Transilience.</h1>
     <p class="ts-sub">AI-Native Security, Delivered by Humans.</p>
   </div>
