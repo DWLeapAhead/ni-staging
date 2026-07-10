@@ -1,6 +1,7 @@
 ═══════════════════════════════════════════════════════════════
   NETWORK INTELLIGENCE — WEBSITE REVAMP
   Staging Site Reference · Started July 2026
+  Last Updated: July 10, 2026
 ═══════════════════════════════════════════════════════════════
 
 STAGING URL
@@ -14,13 +15,13 @@ Shared CSS:     assets/css/main.css
 
 PAGES BUILT
 ──────────────────────────────────────────────────────────────
-/                          → Homepage (index.html)
-/ni-staging/transilience/  → Transilience Platform Overview
-/ni-staging/transilience/rainier/  → Rainier — AI SOC
-/ni-staging/transilience/kamet/    → Kamet — AI Pen-Testing
-/ni-staging/transilience/shasta/   → Shasta — Free Cloud Scanner
-/ni-staging/about/25-years/        → 25th Anniversary
-/ni-staging/about/leadership/      → Leadership Team
+/ni-staging/                           → Homepage (Tesla V3 redesign)
+/ni-staging/transilience/              → Transilience Platform Overview
+/ni-staging/transilience/rainier/      → Rainier — AI SOC
+/ni-staging/transilience/kamet/        → Kamet — AI Pen-Testing
+/ni-staging/transilience/shasta/       → Shasta — Free Cloud Scanner
+/ni-staging/about/25-years/            → 25th Anniversary
+/ni-staging/about/leadership/          → Leadership Team
 
 
 BRAND
@@ -32,6 +33,8 @@ Background:   #131022  (Dark Navy-Purple)
 Deep Purple:  #1A094D
 Cards:        Glassmorphism — rgba(255,255,255,0.05) bg + rgba(255,255,255,0.08) border
 Logo URL:     https://www.networkintelligence.ai/wp-content/uploads/2024/04/final-logo.png
+Logo Strategy: Text fallback (NI mark + "Network Intelligence") shows by default;
+               actual <img> tag hidden (display:none), appears via onload event.
 
 
 NAV STRUCTURE (all pages)
@@ -44,6 +47,34 @@ About ▾          → 25th Anniversary, Leadership, About Us
 CTA Button:      "Talk to an Expert →" (Crimson)
 
 
+HOMEPAGE DESIGN (Tesla V3 — Current)
+──────────────────────────────────────────────────────────────
+Design pattern:  Tesla.com-style full-viewport scroll-snap sections
+Scroll behavior: scroll-snap-type: y proximity (allows footer access)
+CSS class:       html.tesla-page enables snap; .ts-section = each section
+
+SECTIONS IN ORDER:
+1.  Nav (fixed)
+2.  Hero — "Network Intelligence / Transilience." / AI-Native Security
+3.  Product Dashboard — Transilience OS screenshot, dark bg
+4.  Stats Bar — white bg, animated counters (25yrs, 800+ clients, 4 continents)
+5.  Workflow — "See Don't Search", "Ask Don't Dig", "Decide Don't Guess", "Partner Don't Gatekeep"
+6.  Rainier section — full-bleed bg photo, "Rainier." headline
+7.  Kamet section — full-bleed bg photo, "Kamet." headline
+8.  Shasta section — full-bleed bg photo, "Shasta." headline
+9.  Closing CTA — full-bleed bg photo, "Explore the future of security"
+10. Footer
+
+BACKGROUND IMAGES (local files in assets/img/):
+  bg-hero.avif, bg-rainier.avif, bg-kamet.avif, bg-shasta.avif, bg-cta.avif
+  (Downloaded from Pexels, stored as AVIF)
+
+PRODUCT SCREENSHOTS (from OneDrive, stored in assets/img/):
+  dashboard.avif, see_dont_search_may7.avif, ask_dont_dig_may7b.avif
+  decide_dont_guess_may7.avif, partner_dont_gatekeep_may7.avif
+  threat intel report.avif, Open source platform Transilience.png
+
+
 KEY DECISIONS MADE
 ──────────────────────────────────────────────────────────────
 1. Add-only URL policy — no existing NI pages changed or removed
@@ -52,25 +83,24 @@ KEY DECISIONS MADE
 4. robots.txt + noindex on all pages — prevents search engine crawling
 5. All external links (services, contact, about-us) point to live NI site
 6. Transilience content sourced from https://www.transilience.ai/
-   - SecurityOS section replaced ADVISE framework on homepage
-   - 6 workflow modules + 4-step onboarding + Finmont testimonial
 7. Internal links prefixed with /ni-staging/ for GitHub Pages compatibility
+8. Homepage completely redesigned to Tesla.com-style (after 2/10 internal feedback)
+9. Background images downloaded locally (Unsplash blocks hotlinks; used Pexels)
+10. Logo: text fallback primary, actual image progressive enhancement via onload
 
 
-HOMEPAGE SECTIONS (in order)
+BUGS FIXED
 ──────────────────────────────────────────────────────────────
-1. Nav
-2. Hero — "Cybersecurity Powered by AI, Delivered by Humans"
-3. Trust Bar — HITRUST, PCI QSA, CSA, CREST, SWIFT CSP, CERT-In
-4. Trusted By — Client logos (Airtel, FICO, FIS, Amex, TCS, etc.)
-5. Transilience Products — Rainier, Kamet, Shasta cards
-6. Transilience SecurityOS — 6 workflows + onboarding + testimonial
-7. Core Services — 6 service cards
-8. The AI Advantage — split layout
-9. 25 Years — anniversary section
-10. Technology Partners — Tenable, Palo Alto, SailPoint, etc.
-11. CTA Banner
-12. Footer
+- Nav dropdown hover gap (CSS ::before bridge fix)
+- Mobile menu going off-screen (max-height + overflow-y fix)
+- Hero CTAs below the fold (tightened vertical spacing)
+- Internal nav links 404ing on GitHub Pages (added /ni-staging/ prefix)
+- Resources dropdown added to all 7 pages
+- Footer unreachable with scroll-snap (changed mandatory → proximity)
+- Background images not loading (moved from Unsplash hotlinks → local AVIF files)
+- NI logo missing (reversed show/hide: text fallback default, img via onload)
+- Hero "Network Intelligence" too small (added .ts-brand-lockup with NI mark)
+- Mobile hero showing grey (added background-color fallback + height:100vh fallback)
 
 
 PENDING / TO-DO FOR LAUNCH (July 28, 2026)
@@ -106,13 +136,11 @@ git push
 Site updates live within ~60 seconds of push.
 
 
-BUGS FIXED IN THIS SESSION
+SESSION LOG (Claude conversation IDs)
 ──────────────────────────────────────────────────────────────
-- Nav dropdown hover gap (CSS ::before bridge fix)
-- Mobile menu going off-screen (max-height + overflow-y fix)
-- Mobile layout overflow at 480px and 768px
-- Hero CTAs below the fold (tightened vertical spacing)
-- Internal nav links 404ing on GitHub Pages (added /ni-staging/ prefix)
-- Resources dropdown added to all 7 pages
+Session 1 (Jul 2026): Built initial 7 pages, nav, brand system
+Session 2 (Jul 2026): Tesla redesign, GitHub Pages, dropdown fixes
+  Transcript: C:\Users\deepak.wanage\.claude\projects\C--Users-deepak-wanage\ecc63207-dd26-4334-8d9b-ce4675495eae.jsonl
+Session 3 (Jul 10, 2026): Hero NI prominence fix, mobile bg fix
 
 ═══════════════════════════════════════════════════════════════
