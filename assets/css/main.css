@@ -1133,8 +1133,13 @@ h2.sec-title .accent-pink { color: var(--cta-light); }
    ═══════════════════════════════════════════════════════════ */
 
 /* Scroll snap container */
-html.tesla-page { scroll-snap-type: y mandatory; }
+html.tesla-page { scroll-snap-type: y proximity; }
 .tesla-page body { overflow-x: hidden; }
+/* Footer and non-full-height sections scroll freely */
+.tesla-page .footer { scroll-snap-align: start; }
+.tesla-page .ts-stats-bar { scroll-snap-align: start; }
+.tesla-page .ts-workflow-section { scroll-snap-align: start; }
+.tesla-page .ts-product-section { scroll-snap-align: start; }
 
 /* ─── TESLA SECTIONS ─────────────────────────────────────── */
 .ts-section {
