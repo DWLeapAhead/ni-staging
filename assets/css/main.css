@@ -1126,3 +1126,208 @@ h2.sec-title .accent-pink { color: var(--cta-light); }
   .v2-wf-h2 { letter-spacing: -1.5px; }
   .v2-fcs-h2 { letter-spacing: -1.5px; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   HOMEPAGE V3 — Tesla-Style
+   Full-bleed sections, scroll-snap, cinematic photography
+   ═══════════════════════════════════════════════════════════ */
+
+/* Scroll snap container */
+html.tesla-page { scroll-snap-type: y mandatory; }
+.tesla-page body { overflow-x: hidden; }
+
+/* ─── TESLA SECTIONS ─────────────────────────────────────── */
+.ts-section {
+  height: 100svh; min-height: 600px;
+  scroll-snap-align: start;
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: space-between;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  text-align: center;
+  padding: calc(var(--nav-h) + 48px) 24px 56px;
+}
+.ts-overlay {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.28) 0%,
+    rgba(0,0,0,0.08) 40%,
+    rgba(0,0,0,0.08) 60%,
+    rgba(0,0,0,0.55) 100%
+  );
+}
+.ts-overlay-dark {
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.30) 40%,
+    rgba(0,0,0,0.30) 60%,
+    rgba(0,0,0,0.75) 100%
+  );
+}
+/* Section content: eyebrow + name at top, buttons at bottom */
+.ts-top {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center;
+}
+.ts-eyebrow {
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.5px; margin-bottom: 12px;
+}
+.ts-h1 {
+  font-size: clamp(52px, 9vw, 116px);
+  font-weight: 700; letter-spacing: -3px;
+  color: #fff; line-height: 1;
+  margin-bottom: 10px;
+}
+.ts-h1-dark { color: #161616; }
+.ts-sub {
+  font-size: clamp(14px, 1.6vw, 18px);
+  color: rgba(255,255,255,0.80);
+  font-weight: 400; line-height: 1.5;
+  max-width: 480px;
+}
+.ts-sub-dark { color: rgba(0,0,0,0.6); }
+.ts-actions {
+  position: relative; z-index: 1;
+  display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+}
+.ts-btn-dark {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 200px; padding: 14px 28px; border-radius: 100px;
+  font-size: 15px; font-weight: 600; letter-spacing: -0.2px;
+  background: rgba(0,0,0,0.8); color: #fff;
+  transition: all 0.22s; backdrop-filter: blur(8px);
+}
+.ts-btn-dark:hover { background: rgba(0,0,0,0.95); transform: scale(1.02); }
+.ts-btn-light {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 200px; padding: 14px 28px; border-radius: 100px;
+  font-size: 15px; font-weight: 600; letter-spacing: -0.2px;
+  background: rgba(255,255,255,0.22); color: #fff;
+  backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.22s;
+}
+.ts-btn-light:hover { background: rgba(255,255,255,0.32); transform: scale(1.02); }
+/* On light/white sections */
+.ts-btn-dark-solid {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 200px; padding: 14px 28px; border-radius: 100px;
+  font-size: 15px; font-weight: 600;
+  background: #161616; color: #fff;
+  transition: all 0.22s;
+}
+.ts-btn-dark-solid:hover { background: #333; transform: scale(1.02); }
+.ts-btn-outline-dark {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 200px; padding: 14px 28px; border-radius: 100px;
+  font-size: 15px; font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.2); color: #161616; background: rgba(0,0,0,0.05);
+  transition: all 0.22s;
+}
+.ts-btn-outline-dark:hover { background: rgba(0,0,0,0.1); transform: scale(1.02); }
+
+/* ─── PRODUCT INTERSTITIAL ───────────────────────────────── */
+.ts-product-section {
+  scroll-snap-align: start;
+  background: #07060f;
+  padding: 100px 0 0;
+  text-align: center;
+}
+.ts-product-header { padding: 0 24px 64px; }
+.ts-product-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--primary);
+  margin-bottom: 18px;
+}
+.ts-product-h2 {
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 700; letter-spacing: -2px;
+  color: #fff; line-height: 1.1;
+}
+.ts-product-h2 em { font-style: normal; color: var(--primary-light); }
+.ts-product-frame {
+  max-width: 1100px; margin: 0 auto; padding: 0 32px;
+}
+.ts-product-frame img {
+  width: 100%; display: block;
+  border-radius: 18px 18px 0 0;
+  border: 1px solid rgba(99,102,241,0.2);
+  border-bottom: none;
+  box-shadow: 0 -12px 80px rgba(99,102,241,0.15);
+}
+
+/* ─── STATS BAR (between sections) ──────────────────────── */
+.ts-stats-bar {
+  scroll-snap-align: start;
+  background: #fff; color: #161616;
+  padding: 80px 24px;
+  text-align: center;
+}
+.ts-stats-inner {
+  display: flex; justify-content: center; gap: 80px;
+  flex-wrap: wrap; max-width: 900px; margin: 0 auto;
+}
+.ts-stat-num {
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 700; letter-spacing: -2px; color: #161616;
+  line-height: 1;
+}
+.ts-stat-label {
+  font-size: 13px; color: #666; margin-top: 6px; font-weight: 500;
+}
+
+/* ─── WORKFLOW SHOWCASE (light section) ──────────────────── */
+.ts-workflow-section {
+  scroll-snap-align: start;
+  background: #f5f5f5;
+  padding: 100px 0;
+}
+.ts-wf-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: #6366f1;
+  margin-bottom: 16px; text-align: center;
+}
+.ts-wf-title {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700; letter-spacing: -1.5px;
+  color: #161616; text-align: center;
+  margin-bottom: 64px; line-height: 1.1;
+}
+.ts-wf-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  max-width: 1100px; margin: 0 auto; padding: 0 32px;
+}
+.ts-wf-card {
+  background: #fff; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+}
+.ts-wf-card img { width: 100%; display: block; }
+.ts-wf-card-label {
+  padding: 16px 20px;
+  font-size: 13px; font-weight: 700; color: #161616;
+  letter-spacing: 0.3px;
+}
+.ts-wf-card-sub {
+  padding: 0 20px 16px;
+  font-size: 13px; color: #666; line-height: 1.5;
+}
+
+/* ─── TESLA RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .ts-section { padding: calc(var(--nav-h) + 32px) 20px 44px; }
+  .ts-h1 { letter-spacing: -1.5px; }
+  .ts-actions { gap: 10px; }
+  .ts-btn-dark, .ts-btn-light, .ts-btn-dark-solid, .ts-btn-outline-dark {
+    min-width: 160px; padding: 12px 20px; font-size: 14px;
+  }
+  .ts-stats-inner { gap: 40px; }
+  .ts-wf-grid { grid-template-columns: 1fr; }
+  .ts-product-frame { padding: 0 16px; }
+}
+@media (max-width: 480px) {
+  .ts-actions { flex-direction: column; align-items: center; }
+  .ts-btn-dark, .ts-btn-light, .ts-btn-dark-solid, .ts-btn-outline-dark { width: 100%; max-width: 300px; }
+}
