@@ -1,0 +1,118 @@
+═══════════════════════════════════════════════════════════════
+  NETWORK INTELLIGENCE — WEBSITE REVAMP
+  Staging Site Reference · Started July 2026
+═══════════════════════════════════════════════════════════════
+
+STAGING URL
+──────────────────────────────────────────────────────────────
+https://dwleapahead.github.io/ni-staging/
+
+GitHub Repo:    https://github.com/DWLeapAhead/ni-staging
+Local Folder:   C:\Users\deepak.wanage\Desktop\ni-staging
+Shared CSS:     assets/css/main.css
+
+
+PAGES BUILT
+──────────────────────────────────────────────────────────────
+/                          → Homepage (index.html)
+/ni-staging/transilience/  → Transilience Platform Overview
+/ni-staging/transilience/rainier/  → Rainier — AI SOC
+/ni-staging/transilience/kamet/    → Kamet — AI Pen-Testing
+/ni-staging/transilience/shasta/   → Shasta — Free Cloud Scanner
+/ni-staging/about/25-years/        → 25th Anniversary
+/ni-staging/about/leadership/      → Leadership Team
+
+
+BRAND
+──────────────────────────────────────────────────────────────
+Font:         Manrope (Google Fonts)
+Primary:      #6366f1  (Indigo)
+CTA:          #A9194C  (Crimson)
+Background:   #131022  (Dark Navy-Purple)
+Deep Purple:  #1A094D
+Cards:        Glassmorphism — rgba(255,255,255,0.05) bg + rgba(255,255,255,0.08) border
+Logo URL:     https://www.networkintelligence.ai/wp-content/uploads/2024/04/final-logo.png
+
+
+NAV STRUCTURE (all pages)
+──────────────────────────────────────────────────────────────
+Transilience ▾   → Platform, Rainier, Kamet, Shasta
+Practices ▾      → GRC, IAM, Threat Mgmt, IoT/OT, Responsible AI
+Services         → networkintelligence.ai/services/
+Resources ▾      → Blog, Case Studies, Whitepapers, Newsletter
+About ▾          → 25th Anniversary, Leadership, About Us
+CTA Button:      "Talk to an Expert →" (Crimson)
+
+
+KEY DECISIONS MADE
+──────────────────────────────────────────────────────────────
+1. Add-only URL policy — no existing NI pages changed or removed
+2. New pages built as static HTML (no WordPress dependency for staging)
+3. GitHub Pages hosting under /ni-staging/ subdirectory
+4. robots.txt + noindex on all pages — prevents search engine crawling
+5. All external links (services, contact, about-us) point to live NI site
+6. Transilience content sourced from https://www.transilience.ai/
+   - SecurityOS section replaced ADVISE framework on homepage
+   - 6 workflow modules + 4-step onboarding + Finmont testimonial
+7. Internal links prefixed with /ni-staging/ for GitHub Pages compatibility
+
+
+HOMEPAGE SECTIONS (in order)
+──────────────────────────────────────────────────────────────
+1. Nav
+2. Hero — "Cybersecurity Powered by AI, Delivered by Humans"
+3. Trust Bar — HITRUST, PCI QSA, CSA, CREST, SWIFT CSP, CERT-In
+4. Trusted By — Client logos (Airtel, FICO, FIS, Amex, TCS, etc.)
+5. Transilience Products — Rainier, Kamet, Shasta cards
+6. Transilience SecurityOS — 6 workflows + onboarding + testimonial
+7. Core Services — 6 service cards
+8. The AI Advantage — split layout
+9. 25 Years — anniversary section
+10. Technology Partners — Tenable, Palo Alto, SailPoint, etc.
+11. CTA Banner
+12. Footer
+
+
+PENDING / TO-DO FOR LAUNCH (July 28, 2026)
+──────────────────────────────────────────────────────────────
+[ ] Leadership page — replace placeholder cards with real photos + bios
+    (KK, Venkat, Shashwat, Deepak, Muzaffar, Amol)
+[ ] Org structure announcement content (post July 28)
+[ ] "Watch: Why NI" video link — currently href="#" placeholder
+[ ] Careers page link — currently href="#" placeholder
+[ ] Move to WordPress (Muzaffar to port HTML → WP theme/templates)
+[ ] Final content review by Amruta T (copywriting)
+[ ] Design QA by Amol Chaudhari
+[ ] Product content sign-off by Venkat & Shashwat
+
+
+TEAM
+──────────────────────────────────────────────────────────────
+Deepak Wanage    — Head of Marketing & Growth (project owner)
+Muzaffar         — WordPress Dev (will port to WP)
+Amol Chaudhari   — Design & Brand
+Amruta T         — Copywriting
+Venkat           — Head of Product, Transilience
+Shashwat         — Head of Engineering, Transilience
+
+
+TO PUSH CHANGES
+──────────────────────────────────────────────────────────────
+cd "C:/Users/deepak.wanage/Desktop/ni-staging"
+git add .
+git commit -m "your message"
+git push
+
+Site updates live within ~60 seconds of push.
+
+
+BUGS FIXED IN THIS SESSION
+──────────────────────────────────────────────────────────────
+- Nav dropdown hover gap (CSS ::before bridge fix)
+- Mobile menu going off-screen (max-height + overflow-y fix)
+- Mobile layout overflow at 480px and 768px
+- Hero CTAs below the fold (tightened vertical spacing)
+- Internal nav links 404ing on GitHub Pages (added /ni-staging/ prefix)
+- Resources dropdown added to all 7 pages
+
+═══════════════════════════════════════════════════════════════
