@@ -1,7 +1,7 @@
 ═══════════════════════════════════════════════════════════════
   NETWORK INTELLIGENCE — WEBSITE REVAMP
   Staging Site Reference · Started July 2026
-  Last Updated: July 10, 2026
+  Last Updated: July 13, 2026
 ═══════════════════════════════════════════════════════════════
 
 STAGING URL
@@ -47,7 +47,7 @@ About ▾          → 25th Anniversary, Leadership, About Us
 CTA Button:      "Talk to an Expert →" (Crimson)
 
 
-HOMEPAGE DESIGN (Tesla V3 — Current)
+HOMEPAGE DESIGN (Tesla V3 — Current as of Jul 13, 2026)
 ──────────────────────────────────────────────────────────────
 Design pattern:  Tesla.com-style full-viewport scroll-snap sections
 Scroll behavior: scroll-snap-type: y proximity (allows footer access)
@@ -55,19 +55,35 @@ CSS class:       html.tesla-page enables snap; .ts-section = each section
 
 SECTIONS IN ORDER:
 1.  Nav (fixed)
-2.  Hero — "Network Intelligence / Transilience." / AI-Native Security
-3.  Product Dashboard — Transilience OS screenshot, dark bg
-4.  Stats Bar — white bg, animated counters (25yrs, 800+ clients, 4 continents)
+2.  Hero — VIDEO background (bg-hero.mp4) + "Network Intelligence / Transilience." headline
+3.  Product Dashboard — bg-dashboard.jpg background + Transilience OS screenshot
+4.  Stats Bar — white bg, animated counters (25yrs, 500+ clients, 24/7, 1M+ events)
 5.  Workflow — "See Don't Search", "Ask Don't Dig", "Decide Don't Guess", "Partner Don't Gatekeep"
-6.  Rainier section — full-bleed bg photo, "Rainier." headline
-7.  Kamet section — full-bleed bg photo, "Kamet." headline
-8.  Shasta section — full-bleed bg photo, "Shasta." headline
-9.  Closing CTA — full-bleed bg photo, "Explore the future of security"
+6.  Rainier — bg-rainier.jpg, "Rainier." headline
+7.  Kamet — bg-kamet.jpg, "Kamet." headline
+8.  Shasta — bg-shasta.jpg, "Shasta." headline
+9.  Closing CTA — bg-cta.avif (placeholder), "Explore the future of security"
 10. Footer
 
-BACKGROUND IMAGES (local files in assets/img/):
-  bg-hero.avif, bg-rainier.avif, bg-kamet.avif, bg-shasta.avif, bg-cta.avif
-  (Downloaded from Pexels, stored as AVIF)
+BACKGROUND IMAGES — STATUS (as of Jul 13, 2026)
+──────────────────────────────────────────────────────────────
+HERO      bg-hero.mp4       ← VIDEO | iStock gm2156268767 | PENDING DOWNLOAD
+                              City at dusk, curving blue light trails
+DASHBOARD bg-dashboard.jpg  ← Pexels 8738447 | PENDING DOWNLOAD
+                              Abstract red/green/blue bokeh lights (Marek Piwnicki)
+RAINIER   bg-rainier.jpg    ← Pexels 409701 | PENDING DOWNLOAD
+                              Timelapse night street light trails (Karol D)
+KAMET     bg-kamet.jpg      ← iStock (2 options below) | PENDING DOWNLOAD
+                              Option A: gm1078284140 — Abstract data wireframe graph
+                              Option B: gm1877245110 — Abstract technology background
+SHASTA    bg-shasta.jpg     ← iStock (2 options below) | PENDING DOWNLOAD
+                              Option A: gm624489184  — Motion blur city traffic
+                              Option B: gm2172249360 — AI/CPU quantum computing concept
+CTA       bg-cta.avif       ← Old Pexels placeholder (still active, no change yet)
+
+NOTE: iStock images are watermarked comps for staging approval only.
+      Purchase licenses once CEO approves the design.
+      Download comps: log into iStock → go to image page → "Download comp"
 
 PRODUCT SCREENSHOTS (from OneDrive, stored in assets/img/):
   dashboard.avif, see_dont_search_may7.avif, ask_dont_dig_may7b.avif
@@ -77,16 +93,19 @@ PRODUCT SCREENSHOTS (from OneDrive, stored in assets/img/):
 
 KEY DECISIONS MADE
 ──────────────────────────────────────────────────────────────
-1. Add-only URL policy — no existing NI pages changed or removed
-2. New pages built as static HTML (no WordPress dependency for staging)
-3. GitHub Pages hosting under /ni-staging/ subdirectory
-4. robots.txt + noindex on all pages — prevents search engine crawling
-5. All external links (services, contact, about-us) point to live NI site
-6. Transilience content sourced from https://www.transilience.ai/
-7. Internal links prefixed with /ni-staging/ for GitHub Pages compatibility
-8. Homepage completely redesigned to Tesla.com-style (after 2/10 internal feedback)
-9. Background images downloaded locally (Unsplash blocks hotlinks; used Pexels)
+1.  Add-only URL policy — no existing NI pages changed or removed
+2.  New pages built as static HTML (no WordPress dependency for staging)
+3.  GitHub Pages hosting under /ni-staging/ subdirectory
+4.  robots.txt + noindex on all pages — prevents search engine crawling
+5.  All external links (services, contact, about-us) point to live NI site
+6.  Transilience content sourced from https://www.transilience.ai/
+7.  Internal links prefixed with /ni-staging/ for GitHub Pages compatibility
+8.  Homepage completely redesigned to Tesla.com-style (after 2/10 internal feedback)
+9.  Background images downloaded locally (Unsplash blocks hotlinks; used Pexels/iStock)
 10. Logo: text fallback primary, actual image progressive enhancement via onload
+11. Hero uses HTML5 <video> element for video background (not CSS background-image)
+12. iStock watermarked comps acceptable for internal staging; buy license after CEO approval
+13. DO NOT use iStock images on production without purchasing a license
 
 
 BUGS FIXED
@@ -97,14 +116,21 @@ BUGS FIXED
 - Internal nav links 404ing on GitHub Pages (added /ni-staging/ prefix)
 - Resources dropdown added to all 7 pages
 - Footer unreachable with scroll-snap (changed mandatory → proximity)
-- Background images not loading (moved from Unsplash hotlinks → local AVIF files)
+- Background images not loading (moved from Unsplash hotlinks → local files)
 - NI logo missing (reversed show/hide: text fallback default, img via onload)
 - Hero "Network Intelligence" too small (added .ts-brand-lockup with NI mark)
 - Mobile hero showing grey (added background-color fallback + height:100vh fallback)
 
 
-PENDING / TO-DO FOR LAUNCH (July 28, 2026)
+PENDING / TO-DO
 ──────────────────────────────────────────────────────────────
+[ ] Download & add bg-hero.mp4 (iStock comp) to assets/img/
+[ ] Download & add bg-dashboard.jpg (Pexels 8738447) to assets/img/
+[ ] Download & add bg-rainier.jpg (Pexels 409701) to assets/img/
+[ ] Download & add bg-kamet.jpg (iStock comp, pick one of 2 options) to assets/img/
+[ ] Download & add bg-shasta.jpg (iStock comp, pick one of 2 options) to assets/img/
+[ ] CEO approval of updated design with new images
+[ ] Purchase iStock licenses for approved images
 [ ] Leadership page — replace placeholder cards with real photos + bios
     (KK, Venkat, Shashwat, Deepak, Muzaffar, Amol)
 [ ] Org structure announcement content (post July 28)
@@ -135,12 +161,23 @@ git push
 
 Site updates live within ~60 seconds of push.
 
+TO ADD NEW IMAGES (once downloaded):
+cd "C:/Users/deepak.wanage/Desktop/ni-staging"
+git add assets/img/
+git commit -m "Add new background images"
+git push
 
-SESSION LOG (Claude conversation IDs)
+
+SESSION LOG
 ──────────────────────────────────────────────────────────────
 Session 1 (Jul 2026): Built initial 7 pages, nav, brand system
 Session 2 (Jul 2026): Tesla redesign, GitHub Pages, dropdown fixes
   Transcript: C:\Users\deepak.wanage\.claude\projects\C--Users-deepak-wanage\ecc63207-dd26-4334-8d9b-ce4675495eae.jsonl
 Session 3 (Jul 10, 2026): Hero NI prominence fix, mobile bg fix
+Session 4 (Jul 13, 2026): New image/video selection for all sections
+  - CEO feedback: "Better. Need very classy images. Currently amateurish."
+  - Selected: iStock video for hero, Pexels for dashboard+rainier, iStock for kamet+shasta
+  - Code prepped for video hero (<video> element) and .jpg backgrounds
+  - Images PENDING download — see BACKGROUND IMAGES section above
 
 ═══════════════════════════════════════════════════════════════
